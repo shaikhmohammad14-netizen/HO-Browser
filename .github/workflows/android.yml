@@ -30,7 +30,11 @@ jobs:
         uses: android-actions/setup-android@v4
 
       - name: Extract HO Browser project
-        run: unzip -q HO-Browser-GitHub-Starter.zip -d .
+        run: 
+ZIP_FILE=$(find . -maxdepth 1 -type f -iname '*.zip' | head -n 1)
+test -n "$ZIP_FILE"
+unzip -q "$ZIP_FILE" -d .
+
 
       - name: Build APK
         run: gradle --no-daemon -p ho-browser assembleDebug
