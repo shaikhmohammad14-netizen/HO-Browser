@@ -27,7 +27,7 @@ jobs:
           gradle-version: "8.9"
 
       - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
+        uses: android-actions/setup-android@v4
 
       - name: Extract HO Browser project
         run: unzip -q HO-Browser-GitHub-Starter.zip -d .
